@@ -13,8 +13,7 @@ const LanguageManager = (() => {
             "shirt-category": "Shirts",
             "tshirt-category": "T-Shirts",
             "jeans-category": "Jeans",
-            "jacket-category": "Jackets",
-            "shoes-category": "Shoes"
+            "jacket-category": "Jackets"
         },
         es: {
             title: "AC Comercio Electrónico",
@@ -27,8 +26,7 @@ const LanguageManager = (() => {
             "shirt-category": "Camisas",
             "tshirt-category": "Camisetas",
             "jeans-category": "Pantalones",
-            "jacket-category": "Chaquetas",
-            "shoes-category": "Zapatos"
+            "jacket-category": "Chaquetas"
         }
     };
 
@@ -43,8 +41,7 @@ const LanguageManager = (() => {
         document.getElementById("shirt-category").textContent = translations[currentLang]["shirt-category"];
         document.getElementById("tshirt-category").textContent = translations[currentLang]["tshirt-category"];
         document.getElementById("jacket-category").textContent = translations[currentLang]["jacket-category"];
-        document.getElementById("jeans-category").textContent = translations[currentLang]["jeans-category"];
-        document.getElementById("shoes-category").textContent = translations[currentLang]["shoes-category"];
+        document.getElementById("jeans-category").textContent = translations[currentLang]["jeans-category"]; 
     }
 
     function navUpdate() {
@@ -52,8 +49,7 @@ const LanguageManager = (() => {
         document.getElementById("nav-shirts").textContent = translations[currentLang]["nav-shirts"];
         document.getElementById("nav-tshirts").textContent = translations[currentLang]["nav-tshirts"];
         document.getElementById("nav-jeans").textContent = translations[currentLang]["nav-jeans"];
-        document.getElementById("nav-jackets").textContent = translations[currentLang]["nav-jackets"];
-        document.getElementById("nav-shoes").textContent = translations[currentLang]["nav-shoes"];
+        document.getElementById("nav-jackets").textContent = translations[currentLang]["nav-jackets"]; 
     }
 
     return {
