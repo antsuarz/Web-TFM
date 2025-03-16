@@ -1,0 +1,112 @@
+
+/**details */
+
+header > div > a {
+    text-decoration: underline;
+}
+
+header > div > a:hover {
+    color: red;
+}
+
+main > section > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 4rem 0 4rem;
+}
+main section div section{
+    border-radius: 5px;
+}
+main section div section:nth-child(odd){
+    background-color: lightgrey;
+    
+}
+
+main section div section:nth-child(even){
+    background-color: lightgray;
+    margin-left: 4rem;
+}
+
+main section div section> img{
+    max-width: 70%;
+}
+
+h2{
+    margin: 0;
+    padding-left: 4rem;
+}
+
+section:nth-of-type(2) > h3::after{
+    content: '2050 €'; 
+    color: red;
+    font-size: x-large;
+    float: right;
+    margin-right: 1rem;
+}
+/** Acordeon using https://www.w3schools.com/howto/howto_js_accordion.asp*/ 
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .active, .accordion:hover {
+    background-color: white;
+  }
+   
+  .panel {
+    padding: 0 1rem;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+ 
+  .panel > p:nth-child(even){
+    color: red;
+    margin-left: auto;
+  }
+
+  .panel > p:nth-child(odd){ 
+    margin-left: auto;
+  }
+
+  .accordion:after {
+    content: '˅';
+    font-size: 13px;
+    color: black;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "˄";
+  }
+
+  @media screen and (max-width: 500px) {
+      main > section > div{
+        display: flex; 
+        flex-direction: column;
+      }
+
+      .panel {
+        padding: 0;
+      }
+
+      main section div section:nth-child(odd){ 
+        margin-bottom: 1rem;
+      }
+
+      main section div section:nth-child(even){ 
+        margin-left: 0rem;
+      }
+  }

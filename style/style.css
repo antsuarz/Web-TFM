@@ -1,0 +1,298 @@
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/** Cabecera */
+
+header,
+footer {
+    background-color: #f5b25b;
+    color: #fff;
+    padding: 1rem;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header>img {
+    width: 100%;
+    height: 100%;
+    max-width: 120px;
+    max-height: 120px;
+    margin-left: 15%;
+}
+
+h1 {
+    margin: auto;
+}
+
+header div {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: right;
+}
+
+header div img:hover {
+    cursor: pointer;
+}
+
+header div p {
+    margin: 1rem;
+}
+
+header div svg {
+    margin-left: 1rem;
+}
+
+
+header div div:hover {
+    background-color: rgb(211, 62, 62);
+    cursor: pointer;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+/** Barra de Navegación */
+
+nav {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    color: #818080;
+    text-decoration: none;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 10px
+}
+
+nav a:hover {
+    color: black; 
+    padding: 0.5rem;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+
+/** Cuerpo*/
+
+section {
+    padding: 1.5rem;
+}
+
+article {
+    margin: 1rem 10rem 1rem 10rem;
+    padding: 0.5rem;
+    background-color: lightgray;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+article>div {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article>div div {
+    max-width: 200px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover img {
+    width: 70%;
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    transition: width 0.3s ease;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    height: auto;
+}
+
+.card-content h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+.card-content p {
+    margin-top: 0;
+    color: darkred;
+}
+
+.card-content button {
+    display: none;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    padding: 0.5rem 3.5rem;
+}
+
+.card:hover .card-content button {
+    display: block;
+    cursor: pointer;
+}
+
+/** Pie */
+
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    /** Banner */
+
+    .carousel-container {
+        background-color: lightgray;
+    }
+
+    .carousel {
+        margin: auto;
+        width: 300%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel-slide {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-slide img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    header,
+    footer {
+        background-color: #000;
+        color: #fff;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header img {
+        display: none;
+    }
+
+    header div p {
+        display: none;
+    }
+
+    h1 {
+        margin: auto;
+        font-size: medium;
+    }
+
+    /** Barra de Navegación */
+
+    nav {
+        display: none;
+    }
+
+    .menu-open nav {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer; 
+    }
+
+    .menu-toggle {
+        background-color: red;
+        border-color: #333; 
+        border-radius: 10px;
+        color: #fff;
+    }
+    /** Banner */
+
+    .carousel-container {
+        background-color: lightgray;
+    }
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel-slide {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-slide img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+    }
+
+    /** Cuerpo*/
+
+    article {
+        margin: 0;
+    }
+
+
+    /** Pie */
+
+    footer {
+        text-align: center;
+    }
+}
