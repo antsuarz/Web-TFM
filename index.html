@@ -1,243 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/instructions.css">
     <title id="title">AC E-commerce</title>
+    <script src="./scripts/recorder.js"></script> 
+    <script src="./scripts/changeFrame.js"></script> 
 </head>
 
-<body>
-    <header>
-        <div>
-            <button id="lang-button">ES</button>
-            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="30px" fill="#1f1f1f">
-                <path
-                    d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5t127.92 44.69q31.3 14.13 50.19 40.97Q800-292 800-254v94H160Zm60-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm260-321q39 0 64.5-25.5T570-631q0-39-25.5-64.5T480-721q-39 0-64.5 25.5T390-631q0 39 25.5 64.5T480-541Zm0-90Zm0 411Z" />
-            </svg>
-            <div id="cart">
-                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
-                    fill="#1f1f1f">
-                    <path
-                        d="M284.53-80.67q-30.86 0-52.7-21.97Q210-124.62 210-155.47q0-30.86 21.98-52.7Q253.95-230 284.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83Zm400 0q-30.86 0-52.7-21.97Q610-124.62 610-155.47q0-30.86 21.98-52.7Q653.95-230 684.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83ZM238.67-734 344-515.33h285.33l120-218.67H238.67ZM206-800.67h589.38q22.98 0 34.97 20.84 11.98 20.83.32 41.83L693.33-490.67q-11 19.34-28.87 30.67-17.87 11.33-39.13 11.33H324l-52 96h487.33V-286H278q-43 0-63-31.83-20-31.84-.33-68.17l60.66-111.33-149.33-316H47.33V-880h121.34L206-800.67Zm138 285.34h285.33H344Z" />
-                </svg>
-            </div>
-        </div>
-    </header>
+<body> 
 
-    <main id="main-section">
-        <nav>
-
-            <a href="#camisas" id="nav-shirts">Shirts</a>
-            <a href="#camisetas" id="nav-tshirts">T-Shirts</a>
-            <a href="#chaquetas" id="nav-jackets">Jackets</a>
-            <a href="#pantalones" id="nav-jeans">Jeans</a>
-        </nav>
-
-        <div> 
-            <article id="camisas">
-                <h3 id="shirt-category">Shirts</h3>
-                <div>
-                    <div class="card">
-                        <img src="./img/shirt/white-shirt.jpg" alt="White shirt image">
-                        <section class="card-content">
-                            <h4>White Shirt</h4>
-                            <p>17 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/shirt/black-shirt.jpg" alt="Black shirt image">
-                        <section class="card-content">
-                            <h4>Black Shirt</h4>
-                            <p>17 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/shirt/green-shirt.jpg" alt="Green shirt image">
-                        <section class="card-content">
-                            <h4>Green Shirt</h4>
-                            <p>17 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/shirt/mustard-shirt.jpg" alt="Mustard shirt image">
-                        <section class="card-content">
-                            <h4>Mustard Shirt</h4>
-                            <p>17 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/shirt/purple-shirt.jpg" alt="Purple shirt image">
-                        <section class="card-content">
-                            <h4>Purple Shirt</h4>
-                            <p>17 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/shirt/red-shirt.jpg" alt="Red shirt image">
-                        <section class="card-content">
-                            <h4>Red Shirt</h4>
-                            <p>17 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                </div>
-            </article>
-            <article id="camisetas">
-                <h3 id="tshirt-category">T-Shirts</h3>
-                <div>
-                    <div class="card">
-                        <img src="./img/tshirt/black-tshirt.jpg" alt="Black T-shirt image">
-
-                        <section class="card-content">
-                            <h4>Cotton Regular Black Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/tshirt/green-tshirt.jpg" alt="Green T-shirt image">
-                        <section class="card-content">
-                            <h4>Cotton Regular Dark Green Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/tshirt/lightgreen-tshirt.jpg" alt="LightGreen T-shirt image">
-
-                        <section class="card-content">
-                            <h4>Cotton Regular Light Green Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-
-                    <div class="card">
-                        <img src="./img/tshirt/blue-tshirt.jpg" alt="Blue T-shirt image">
-                        <section class="card-content">
-                            <h4>Cotton Regular Blue Shirts</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/tshirt/lightblue-tshirt.jpg" alt="Light T-shirt image">
-                        <section class="card-content">
-                            <h4>Cotton Regular Light Blue Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/tshirt/mustard-tshirt.jpg" alt="Dark Yellow T-shirt image">
-
-                        <section class="card-content">
-                            <h4>Cotton Regular Dark Yellow Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/tshirt/yellow-tshirt.jpg" alt="Yellow T-shirt image">
-
-                        <section class="card-content">
-                            <h4>Cotton Regular Yellow Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/tshirt/red-tshirt.jpg" alt="Red T-shirt image">
-                        <section class="card-content">
-                            <h4>Cotton Regular Red Shirt</h4>
-                            <p>10 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                </div>
-            </article>
-            <article id="chaquetas">
-                <h3 id="jacket-category">Jackets</h3>
-                <div>
-                    <div class="card">
-                        <img src="./img/jacket/black-jacket.jpg" alt="Black Jacket image">
-                        <section class="card-content">
-                            <h4>Black Bomber</h4>
-                            <p>50 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/jacket/olive-jacket.jpg" alt="Olive Jacket image">
-                        <section class="card-content">
-                            <h4>Olive Bomber</h4>
-                            <p>50 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/jacket/blue-jacket.jpg" alt="Blue Jacket image">
-                        <section class="card-content">
-                            <h4>Blue Bomber</h4>
-                            <p>50 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/jacket/beige-jacket.jpg" alt="Beige Jacket image">
-                        <section class="card-content">
-                            <h4>Beige Bomber</h4>
-                            <p>50 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                </div>
-            </article>
-            <article id="pantalones">
-                <h3 id="jeans-category">Jeans</h3>
-                <div>
-                    <div class="card">
-                        <img src="./img/jeans/blue-jean.jpg" alt="Blue Jean image">
-                        <section class="card-content">
-                            <h4>Regular Fit Jean (Blue)</h4>
-                            <p>20 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/jeans/bluegray-jean.jpg" alt="BlueGray Jean image">
-                        <section class="card-content">
-                            <h4>Regular Fit Jean (Aqua)</h4>
-                            <p>20 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <img src="./img/jeans/gray-jean.jpg" alt="Gray Jean image">
-                        <section class="card-content">
-                            <h4>Regular Fit Jean (Gray)</h4>
-                            <p>20 €</p>
-                            <button>Add to Cart</button>
-                        </section>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <script src="./scripts/i18n.js"></script>
-
-    </main>
-    <footer>
-        <p>Antonio Suárez Crespo - UO270543</p>
-        <p>Máster Universitario de Ingeniería Web - 2024</p>
-    </footer>
+    <main>
+        <section id="instructions">
+            <h2>Titulo</h2>
+            <p>Instrucción</p> 
+            <p>Instrucción</p> 
+            <p>Instrucción</p> 
+            <p>Instrucción</p> 
+            <button onclick="cambiarContenido('shop.html')">Entendido</button> 
+        </section>  
+        
+        <script src="./scripts/changeFrame.js"></script>
+        <iframe id="main-frame" ></iframe>
+        
+    </main> 
+    
 </body>
 
 </html>
