@@ -156,6 +156,31 @@ article>div div {
     color: red; 
 }
 
+.modal-content > ul {
+   padding-bottom: 1rem; 
+}
+
+.modal-content > a{
+    padding: 12px;
+    background-color: #333333;
+    color: white; 
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+.modal-content > a:hover{
+    padding: 12px;
+    background-color: #414141;
+    color: white; 
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+
 .modal-content > p{
     text-align: end;
 }
