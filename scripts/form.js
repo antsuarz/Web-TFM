@@ -1,6 +1,9 @@
+const NUMBER_OF_QUESTIONS=26;
+
 const translations = {
     en: {
         "submit": "Submit",
+        "end":"Restart session",
         "q1": "It is easy to read the text on this website with the used font type and size.",
         "q2": "The font color is appealing on this website.",
         "q3": "The text alignment and spacing on this website make the text easy to read.",
@@ -30,6 +33,7 @@ const translations = {
     },
     es: {
         "submit": "Enviar",
+        "end":"Comenzar de nuevo",
         "q1": "Es fácil leer el texto en este sitio web con el tipo y tamaño de fuente utilizados.",
         "q2": "El color de la fuente es atractivo en este sitio web.",
         "q3": "La alineación y el espaciado del texto hacen que sea fácil de leer.",
@@ -62,7 +66,7 @@ window.onload = function () {
 
     const form = document.querySelector('form');
 
-    for (let i = 0; i < 26; i++) {
+    for (let i = 0; i < NUMBER_OF_QUESTIONS; i++) {
         const label = document.createElement('label');
         label.setAttribute('for', 'pregunta' + (i + 1));
         label.setAttribute('id', 'q' + (i + 1));
@@ -81,18 +85,65 @@ window.onload = function () {
         form.appendChild(div);
     }
     const button = document.createElement('button');
-    button.type = 'submit';
+    button.type = 'button';
     button.id = 'submit-button';
     button.textContent = 'Submit';
+    button.onclick = function(event) {
+        if (checkFormCompleted()) { 
+            downloadCSV();
+        } else {
+            alert("Please check the form, you did not answer all the questions");
+        }
+    };
     form.appendChild(button);
 };
 
+function checkFormCompleted() {
+    for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
+        const inputs = document.getElementsByName('pregunta' + i);
+        let answered = false;
+        for (let input of inputs) {
+            if (input.checked) {
+                answered = true;
+                break;
+            }
+        }
+        if (!answered) {
+            return false; 
+        }
+    }
+    return true; 
+}
+ 
+function downloadCSV() {
+    const formData = [];
+    
+    for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
+        const inputs = document.getElementsByName('pregunta' + i);
+        let answer = '';
 
+        for (let input of inputs) {
+            if (input.checked) {
+                answer = input.value;
+                break;
+            }
+        }
 
+        formData.push(`q${i},${answer}`);  
+    }
+
+    const csvContent = "data:text/csv;charset=utf-8," + formData.join("\n");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-"); 
+    const a = document.createElement("a");
+    a.href = encodeURI(csvContent);
+    a.download = `respuestas_formulario_${timestamp}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
 
 const FormLanguageManager = (() => {
     let currentLang = "en";
-
 
     function updateLanguage() {
         for (let i = 1; i <= 26; i++) {
@@ -103,6 +154,7 @@ const FormLanguageManager = (() => {
         }
         document.getElementById("submit-button").textContent = translations[currentLang].submit;
         document.getElementById("lang-button").textContent = currentLang === "en" ? "ES" : "EN";
+        document.getElementById("restart-button").textContent = translations[currentLang].end;
     }
 
     return {

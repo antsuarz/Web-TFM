@@ -1,5 +1,6 @@
 let mediaRecorder;
 let recordedChunks = [];
+let isDownloading = false;
 
 function startRecording() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
@@ -14,17 +15,17 @@ function startRecording() {
 
             mediaRecorder.start();
         })
-        .catch(error => console.error("Error al acceder a la cámara:", error));
+        .catch(error => console.error("Error al acceder a la camara:", error));
 }
- let isDownloading = false;
 
 function stopRecordingAndDownload() { 
 
     if (mediaRecorder && mediaRecorder.state !== "inactive") {
         mediaRecorder.stop();
+        console.log("Grabacion parada");
         isDownloading = true;
 
-        mediaRecorder.onstop = () => { 
+        mediaRecorder.onstop = () => {
  
             const url = URL.createObjectURL(new Blob(recordedChunks, { type: "video/webm" }));
             const a = document.createElement("a");

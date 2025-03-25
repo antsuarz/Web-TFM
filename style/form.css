@@ -2,10 +2,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 0;  
+    padding: 0;
 }
 
-/** Cabecera */
+/* Cabecera */
 
 header {
     display: flex;
@@ -13,16 +13,14 @@ header {
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 10px 20px; 
-}
-
-h1 {
-    margin: 0;
-    flex-grow: 1;
-    text-align: center;
+    padding: 10px 20px;
 }
 
 header > div > button {
+    font-size: 1.1rem;
+}
+
+button, a {
     background-color: gray;
     color: white;
     padding: 8px 16px;
@@ -31,46 +29,58 @@ header > div > button {
     border-radius: 5px;
     font-size: 1.1rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
-header > div > button:hover {
+button:hover, a:hover {
     background-color: #adadad;
     color: black;
 }
+ 
+label {
+    margin: 0;
+    font-size: 1.2rem;
+}
 
+header > a {
+    margin-right: 1rem;
+}
 
-/** Formulario */
+h1 {
+    flex-grow: 1;
+    margin: 0; 
+    text-align: center;
+}
+
+/* Formulario */
 
 form {
     width: 100%;
     max-width: 60vw;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 2rem auto;
+    padding: 2rem;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
-label { 
-    margin: 1rem;
-    font-size: 1.2rem; 
+form > div {
+    margin: 1rem 0 2rem 0;
+    text-align: center;
 }
 
-form > div{ 
-    margin: 1rem 0 1rem 0;
-    text-align: center; 
-}
+/* radio buttons */
 
 input[type="radio"] {
-    appearance: none; 
-    width: 25px;  
-    height: 25px;  
-    border-radius: 50%;    
-    border: 0.1rem solid black; 
-   
-    margin-right: 10px; 
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0.1rem solid black;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 input[type="radio"]:checked {
@@ -81,12 +91,11 @@ input[type="radio"]:checked:hover {
     background-color: #4290e2;
 }
 
-input[type="radio"]:hover { 
+input[type="radio"]:hover {
     background-color: #98bbe0;
-    cursor: pointer;
 }
+
 form > button {
-    display: block;
     width: 100%;
     padding: 12px;
     background-color: #333;
@@ -101,4 +110,3 @@ form > button {
 form > button:hover {
     background-color: #505050;
 }
- 
