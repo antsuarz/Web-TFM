@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;  
+}
+
+/** Cabecera */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px; 
+}
+
+h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+header > div > button {
+    background-color: gray;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+header > div > button:hover {
+    background-color: #adadad;
+    color: black;
+}
+
+
+/** Formulario */
+
+form {
+    width: 100%;
+    max-width: 60vw;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+}
+
+label { 
+    margin: 1rem;
+    font-size: 1.2rem; 
+}
+
+form > div{ 
+    margin: 1rem 0 1rem 0;
+    text-align: center; 
+}
+
+input[type="radio"] {
+    appearance: none; 
+    width: 25px;  
+    height: 25px;  
+    border-radius: 50%;    
+    border: 0.1rem solid black; 
+   
+    margin-right: 10px; 
+}
+
+input[type="radio"]:checked {
+    background-color: #4290e2;
+}
+
+input[type="radio"]:checked:hover {
+    background-color: #4290e2;
+}
+
+input[type="radio"]:hover { 
+    background-color: #98bbe0;
+    cursor: pointer;
+}
+form > button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+form > button:hover {
+    background-color: #505050;
+}
+ 

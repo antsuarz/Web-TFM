@@ -1,0 +1,250 @@
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif; 
+}
+
+/** Cabecera */
+
+header {
+    background-color: #f5b25b;
+    color: #000;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header button{
+    cursor: pointer;
+}
+
+header div {
+    grid-column: 3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: right;
+}
+
+header div svg {
+    margin-left: 1rem;
+}
+
+header div div:hover {
+    cursor: pointer;
+}
+
+
+header > div > button {
+    background-color: #6b6b6b;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+header > div > button:hover {
+    background-color: #808080;
+    color: white;
+}
+
+header > div > div> span{
+    color: #1f1f1f;
+    font-weight: bold;
+}
+
+
+/** Barra de Navegación */
+
+nav {
+    background-color: #faddb7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    color: #3a3a3a;
+    text-decoration: none;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 10px
+}
+
+nav a:hover {
+    color: black; 
+    padding: 0.5rem;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+
+/** Cuerpo*/
+
+main{
+    overflow: hidden;
+}
+main div {
+    padding: 1.5rem;
+}
+
+article {
+    margin: 1rem 10rem 1rem 10rem;
+    padding: 0.5rem;
+    background-color: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+article>div {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+article>div div {
+    max-width: 200px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Productos */ 
+
+.card:hover img {
+    width: 70%;
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 0 2rem 2rem 0;
+}
+
+.modal-content > ul > li{
+    margin-bottom: 1rem;
+}
+
+.modal-content > ul > li > button{
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.5rem; 
+    color: black;
+    cursor: pointer; 
+}
+
+.modal-content > ul > li > button:hover{
+    color: red; 
+}
+
+.modal-content > p{
+    text-align: end;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    width: 90%;
+    display: block;
+    margin: auto;
+    transition: width 0.5s ease;
+}
+
+.card:hover img {
+    width: 85%;
+    cursor: pointer;
+}
+
+.card-content h4{
+    margin: 0 0 0.5rem;
+}
+
+/* Color del Precio */
+.card-content p {
+    color: darkred;
+}
+
+.card-content button {
+    opacity: 0; 
+    background: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5rem 3rem;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.card:hover .card-content button { 
+    opacity: 1;
+}
+
+/* Pie de página */
+
+footer {
+    background-color: #f5b25b;
+    color: #000;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/** detalle del carrito */ 
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004b;
+    overflow: auto;
+    padding-top: 5rem;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 1rem 1.5rem 0 1.5rem;
+    border: 1px solid #888; 
+    max-width: 33vw;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
