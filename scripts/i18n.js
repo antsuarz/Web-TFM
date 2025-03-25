@@ -13,7 +13,9 @@ const LanguageManager = (() => {
             "shirt-category": "Shirts",
             "tshirt-category": "T-Shirts",
             "jeans-category": "Jeans",
-            "jacket-category": "Jackets"
+            "jacket-category": "Jackets",
+            "modal-title":"Your Cart",
+            "cart-button":"Add to Cart"
         },
         es: {
             title: "AC Comercio Electrónico",
@@ -26,22 +28,35 @@ const LanguageManager = (() => {
             "shirt-category": "Camisas",
             "tshirt-category": "Camisetas",
             "jeans-category": "Pantalones",
-            "jacket-category": "Chaquetas"
+            "jacket-category": "Chaquetas",
+            "modal-title":"Tu Carrito",
+            "cart-button":"Añadir al Carrito"
         }
     };
 
     function updateLanguage() {
         navUpdate();
         categoryUpdate();
+        buttonsUpdate();
         document.getElementById("lang-button").textContent = currentLang === "en" ? "ES" : "EN"; 
         
     }
 
+    
+    function buttonsUpdate() {
+        const addToCartButtons = document.querySelectorAll('section > button');
+        addToCartButtons.forEach(button => {
+            button.textContent = translations[currentLang]["cart-button"];
+        }); 
+
+    }
     function categoryUpdate() {
         document.getElementById("shirt-category").textContent = translations[currentLang]["shirt-category"];
         document.getElementById("tshirt-category").textContent = translations[currentLang]["tshirt-category"];
         document.getElementById("jacket-category").textContent = translations[currentLang]["jacket-category"];
         document.getElementById("jeans-category").textContent = translations[currentLang]["jeans-category"]; 
+        document.getElementById("modal-title").textContent = translations[currentLang]["modal-title"]; 
+        
     }
 
     function navUpdate() {

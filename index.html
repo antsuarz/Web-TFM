@@ -5,28 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/instructions.css">
-    <title id="title">AC E-commerce</title>
-    <script src="./scripts/recorder.js"></script> 
-    <script src="./scripts/changeFrame.js"></script> 
+    <title id="title">AC E-commerce</title> 
+   
 </head>
 
 <body> 
 
+    <header id="main-header">
+        <h1>Instrucciones de la prueba</h1>
+        <div> 
+            <button id="lang-button">ES</button>
+        </div>
+    </header> 
     <main>
-        <section id="instructions">
-            <h2>Titulo</h2>
+        <div id="instructions"> 
             <p>Instrucción</p> 
             <p>Instrucción</p> 
             <p>Instrucción</p> 
             <p>Instrucción</p> 
-            <button onclick="cambiarContenido('shop.html')">Entendido</button> 
-        </section>  
+            <button id="main-button" onclick="cambiarContenido('shop.html')">Entendido</button> 
+        </div>  
         
         <script src="./scripts/changeFrame.js"></script>
         <iframe id="main-frame" ></iframe>
         
     </main> 
     
+    <script src="./scripts/instructions-i18n.js"></script> 
 </body>
 
 </html>
