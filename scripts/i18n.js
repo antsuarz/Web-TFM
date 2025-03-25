@@ -34,6 +34,9 @@ const LanguageManager = (() => {
         }
     };
 
+    function getCurrentLang(){
+        return currentLang;
+    }
     function updateLanguage() {
         navUpdate();
         categoryUpdate();

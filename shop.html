@@ -230,10 +230,21 @@
                 <span id="close-modal" class="close">&times;</span>
                 <h2 id="modal-title">Carrito</h2>
                 <ul id="cart-items-list"></ul>
-                <p>Total: <span id="total-price">0 €</span></p>
+                <a id="download-video" href="questionary.html" onclick="stopRecordingAndDownload()">Comprar</a>
+                <p>Total: <span id="total-price">0 €</span></p> 
             </div>
-        </div>
+        </div>   
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                if (typeof startRecording === "function") {
+                    startRecording();
+                } else {
+                    console.error("startRecording() no está definido.");
+                }
+            });
+        </script> 
         <script src="./scripts/i18n.js"></script>
+        <script src="./scripts/record.js"></script>
         <script src="./scripts/manageCart.js"></script>
     </article> 
 <footer>
