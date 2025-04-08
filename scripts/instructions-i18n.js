@@ -1,5 +1,5 @@
 const MainLanguageManager = (() => {
-    let currentLang = "en";
+    let currentLang = "es";
 
     const translations = {
         en: { 
