@@ -1,9 +1,17 @@
 const NUMBER_OF_QUESTIONS=26;
 
+let currentLang = "es";
 const translations = {
     en: {
         "submit": "Submit",
         "end":"Restart session",
+        "gender":"Gender",
+        "year":"Year of birth",
+        "male":"Male",
+        "female":"Female",
+        "other":"Other",
+        "yearExample":"Example: 1990",
+        "validation":"Please check the form, you did not answer all the questions",
         "q1": "It is easy to read the text on this website with the used font type and size.",
         "q2": "The font color is appealing on this website.",
         "q3": "The text alignment and spacing on this website make the text easy to read.",
@@ -34,6 +42,13 @@ const translations = {
     es: {
         "submit": "Enviar",
         "end":"Comenzar de nuevo",
+        "gender":"Genero",
+        "year":"Año de nacimiento",
+        "male":"Masculino",
+        "female":"Femenino",
+        "other":"Other",
+        "yearExample":"Ejemplo: 1990",
+        "validation":"Por favor, verifique el formulario, no ha respondido a todas las preguntas",
         "q1": "Es fácil leer el texto en este sitio web con el tipo y tamaño de fuente utilizados.",
         "q2": "El color de la fuente es atractivo en este sitio web.",
         "q3": "La alineación y el espaciado del texto hacen que sea fácil de leer.",
@@ -64,17 +79,56 @@ const translations = {
 }
 window.onload = function () {
 
-    const form = document.querySelector('form');
+    const form = document.querySelector('form'); 
+
+    const genderLabel = document.createElement('label');
+    genderLabel.setAttribute('for', 'gender');
+    genderLabel.textContent = translations[currentLang].gender;
+    form.appendChild(genderLabel);
+
+    const genderSelect = document.createElement('select');
+    genderSelect.id = 'gender';
+    genderSelect.name = 'gender';
+
+    const genderOptions = [
+        { value: '', text:translations[currentLang].gender },
+        { value: 'male', text: translations[currentLang].male },
+        { value: 'female', text: translations[currentLang].female },
+        { value: 'other', text: translations[currentLang].other }
+    ];
+
+    genderOptions.forEach(optionData => {
+        const option = document.createElement('option');
+        option.value = optionData.value;
+        option.textContent = optionData.text;
+        genderSelect.appendChild(option);
+    });
+
+    form.appendChild(genderSelect);
+
+    const yearLabel = document.createElement('label');
+    yearLabel.setAttribute('for', 'year');
+    yearLabel.textContent = translations[currentLang].year;
+    form.appendChild(yearLabel);
+
+    const yearInput = document.createElement('input');
+    yearInput.type = 'number';
+    yearInput.id = 'year';
+    yearInput.name = 'year';
+    yearInput.min = 1900;
+    yearInput.max = new Date().getFullYear();
+    yearInput.placeholder =  translations[currentLang].yearExample;
+    form.appendChild(yearInput);
 
     for (let i = 0; i < NUMBER_OF_QUESTIONS; i++) {
         const label = document.createElement('label');
         label.setAttribute('for', 'pregunta' + (i + 1));
         label.setAttribute('id', 'q' + (i + 1));
-        label.textContent = translations["en"]["q" + (i + 1)];
+        label.textContent = translations[currentLang]["q" + (i + 1)];
         form.appendChild(label);
 
         const div = document.createElement('div');
-        for (let j = 0; j <= 10; j++) {
+        for (let j = 0; j <= 5; j++) {
             const input = document.createElement('input');
             input.type = 'radio';
             input.name = 'pregunta' + (i + 1);
@@ -87,12 +141,12 @@ window.onload = function () {
     const button = document.createElement('button');
     button.type = 'button';
     button.id = 'submit-button';
-    button.textContent = 'Submit';
+    button.textContent = translations[currentLang].submit;
     button.onclick = function(event) {
         if (checkFormCompleted()) { 
             downloadCSV();
         } else {
-            alert("Please check the form, you did not answer all the questions");
+            alert(translations[currentLang].validation);
         }
     };
     form.appendChild(button);
@@ -117,7 +171,13 @@ function checkFormCompleted() {
  
 function downloadCSV() {
     const formData = [];
-    
+    const year = document.getElementById("year").value;
+    formData.push(`birth,${year}`);
+
+    const genderSelect = document.getElementById("gender");
+    const gender = genderSelect.value;
+    formData.push(`gender,${gender}`);
+
     for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
         const inputs = document.getElementsByName('pregunta' + i);
         let answer = '';
@@ -142,8 +202,7 @@ function downloadCSV() {
     document.body.removeChild(a);
 }
 
-const FormLanguageManager = (() => {
-    let currentLang = "en";
+const FormLanguageManager = (() => { 
 
     function updateLanguage() {
         for (let i = 1; i <= 26; i++) {
@@ -155,6 +214,36 @@ const FormLanguageManager = (() => {
         document.getElementById("submit-button").textContent = translations[currentLang].submit;
         document.getElementById("lang-button").textContent = currentLang === "en" ? "ES" : "EN";
         document.getElementById("restart-button").textContent = translations[currentLang].end;
+    
+        const genderLabel = document.querySelector('label[for="gender"]');
+        if (genderLabel) {
+            genderLabel.textContent = translations[currentLang].gender;
+        }
+
+        const genderSelect = document.getElementById("gender");
+        if (genderSelect) {
+            const genderOptions = [
+                { value: '', text: translations[currentLang].gender },
+                { value: 'male', text: translations[currentLang].male },
+                { value: 'female', text: translations[currentLang].female },
+                { value: 'other', text: translations[currentLang].other }
+            ];
+            
+            genderSelect.innerHTML = '';
+ 
+            genderOptions.forEach(optionData => {
+                const option = document.createElement('option');
+                option.value = optionData.value;
+                option.textContent = optionData.text;
+                genderSelect.appendChild(option);
+            });
+        }
+ 
+        const yearLabel = document.querySelector('label[for="year"]');
+        if (yearLabel) {
+            yearLabel.textContent = translations[currentLang].year;
+        }
+        document.getElementById("year").placeholder = translations[currentLang].yearExample;
     }
 
     return {

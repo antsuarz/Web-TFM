@@ -73,3 +73,9 @@ main > div > a {
 main > div > a:hover {
     background-color: #505050;
 }
+
+p{
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 50%;
+}
