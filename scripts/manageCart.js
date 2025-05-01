@@ -9,18 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPrice = document.getElementById('total-price');
 
     let cartItemCount = 0;
-    let cartItems = []; 
+    let cartItems = [];
     let total = 0;
 
     function updateCart() {
-        cartItemsList.innerHTML = ''; 
+        cartItemsList.innerHTML = '';
         cartItems.forEach((item, index) => {
             const listItem = document.createElement('li');
             listItem.textContent = `${item.name} - ${item.price.toFixed(2)} €`;
 
             const removeButton = document.createElement('button');
             removeButton.classList.add('remove-item');
-            removeButton.textContent = '-';
+            removeButton.id = 'remove-button';
+            removeButton.style.backgroundImage = 'url("./img/delete.png")';
+            removeButton.style.backgroundSize = 'contain';
+            removeButton.style.backgroundRepeat = 'no-repeat';
+            removeButton.style.backgroundPosition = 'center';
+            removeButton.style.width = '20px'; // Ancho del botón
+            removeButton.style.height = '20px'; // Alto del botón
+            removeButton.style.border = 'none'; // Elimina el borde
+            removeButton.style.cursor = 'pointer'; // Cambia el cursor al pasar sobre el botón
             removeButton.addEventListener('click', () => removeItem(index));
 
             listItem.appendChild(removeButton);
@@ -43,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function removeItem(index) {
         const item = cartItems.splice(index, 1)[0];
         cartItemCount--;
-        if(cartItemCount == 0){
+        if (cartItemCount == 0) {
             cartCount.textContent = '';
             cartModal.style.display = 'none';
         }
-        else{
+        else {
             cartCount.textContent = cartItemCount;
         }
 
@@ -66,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cart.addEventListener('click', () => {
-        if(cartItemCount != 0){
+        if (cartItemCount != 0) {
             cartModal.style.display = 'block';
-            updateCart(); 
+            updateCart();
         }
-        
+
     });
 
     closeModal.addEventListener('click', () => {

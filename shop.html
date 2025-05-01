@@ -36,8 +36,39 @@
     <a href="#camisetas" id="nav-tshirts">Camisetas</a>
     <a href="#chaquetas" id="nav-jackets">Chaquetas</a>
     <a href="#pantalones" id="nav-jeans">Pantalones</a>
+    <a href="#zapatos" id="nav-shoes">Zapatos</a>
 </nav>
 <div class="separator"></div>
+<article id="zapatos" style="display: none;">
+    <h3 id="shoe-category">Zapatos</h3>
+    <div>
+        <div class="card">
+            <img src="./img/shoes/black-shoes.jpg" alt="Black Shoes image">
+            <section class="card-content">
+                <h4>Black Shoes</h4>
+                <p>54 €</p>
+                <button>Add to Cart</button>
+            </section>
+        </div>
+        <div class="card">
+            <img src="./img/shoes/beige-shoes.jpg" alt="Beige Shoes image">
+            <section class="card-content">
+                <h4>Beige Shoes</h4>
+                <p>48 €</p>
+                <button>Add to Cart</button>
+            </section>
+        </div>
+        <div class="card">
+            <img src="./img/shoes/white-shoes.jpg" alt="White Shoes image">
+            <section class="card-content">
+                <h4>White Shoes</h4>
+                <p>46 €</p>
+                <button>Add to Cart</button>
+            </section>
+        </div>
+        
+    </div>
+</article>
     <article id="camisas">
         <h3 id="shirt-category">Camisas</h3>
         <div>
@@ -86,6 +117,43 @@
                 <section class="card-content">
                     <h4>Red Shirt</h4>
                     <p>11 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+        </div>
+    </article>
+    <article id="chaquetas">
+        <h3 id="jacket-category">Chaquetas</h3>
+        <div>
+            <div class="card">
+                <img src="./img/jacket/black-jacket.jpg" alt="Black Jacket image">
+                <section class="card-content">
+                    <h4>Black Bomber</h4>
+                    <p>54 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+            <div class="card">
+                <img src="./img/jacket/olive-jacket.jpg" alt="Olive Jacket image">
+                <section class="card-content">
+                    <h4>Olive Bomber</h4>
+                    <p>48 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+            <div class="card">
+                <img src="./img/jacket/blue-jacket.jpg" alt="Blue Jacket image">
+                <section class="card-content">
+                    <h4>Blue Bomber</h4>
+                    <p>46 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+            <div class="card">
+                <img src="./img/jacket/beige-jacket.jpg" alt="Beige Jacket image">
+                <section class="card-content">
+                    <h4>Beige Bomber</h4>
+                    <p>51 €</p>
                     <button>Add to Cart</button>
                 </section>
             </div>
@@ -165,43 +233,6 @@
             </div>
         </div>
     </article>
-    <article id="chaquetas">
-        <h3 id="jacket-category">Chaquetas</h3>
-        <div>
-            <div class="card">
-                <img src="./img/jacket/black-jacket.jpg" alt="Black Jacket image">
-                <section class="card-content">
-                    <h4>Black Bomber</h4>
-                    <p>54 €</p>
-                    <button>Add to Cart</button>
-                </section>
-            </div>
-            <div class="card">
-                <img src="./img/jacket/olive-jacket.jpg" alt="Olive Jacket image">
-                <section class="card-content">
-                    <h4>Olive Bomber</h4>
-                    <p>48 €</p>
-                    <button>Add to Cart</button>
-                </section>
-            </div>
-            <div class="card">
-                <img src="./img/jacket/blue-jacket.jpg" alt="Blue Jacket image">
-                <section class="card-content">
-                    <h4>Blue Bomber</h4>
-                    <p>46 €</p>
-                    <button>Add to Cart</button>
-                </section>
-            </div>
-            <div class="card">
-                <img src="./img/jacket/beige-jacket.jpg" alt="Beige Jacket image">
-                <section class="card-content">
-                    <h4>Beige Bomber</h4>
-                    <p>51 €</p>
-                    <button>Add to Cart</button>
-                </section>
-            </div>
-        </div>
-    </article>
     <article id="pantalones">
         <h3 id="jeans-category">Pantalones</h3>
         <div>
@@ -231,8 +262,8 @@
             </div>
         </div>
 
-        <div id="cart-modal" class="modal">
-            <div class="modal-content">
+        <div id="cart-modal" class="carrito">
+            <div class="carrito-content">
                 <span id="close-modal" class="close">&times;</span>
                 <h2 id="modal-title">Carrito</h2>
                 <ul id="cart-items-list"></ul>
@@ -245,13 +276,14 @@
                 if (typeof startRecording === "function") {
                     startRecording();
                 } else {
-                    console.error("startRecording() no está definido.");
+                    console.error("Error a la hora de iniciar la grabación.");
                 }
             });
         </script> 
         <script src="./scripts/i18n.js"></script>
         <script src="./scripts/record.js"></script>
         <script src="./scripts/manageCart.js"></script>
+        <script src="./scripts/shop.js"></script>
     </article> 
 <footer>
     <p>Antonio Suárez Crespo - UO270543</p>

@@ -90,6 +90,10 @@ header div#cart {
     cursor: pointer; 
 }
 
+header div#cart:hover{
+    background-color: rgb(201, 201, 201); 
+}
+
 header div#cart svg {
     width: 30px;
     fill: #1f1f1f; 
@@ -189,28 +193,31 @@ article>div div {
     margin: 0 2rem 2rem 0;
 }
 
-.modal-content > ul > li{
+.carrito-content > ul > li{
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
 }
 
-.modal-content > ul > li > button{
-    background: none;
-    border: none;
+.carrito-content > ul > li > button{
+    background: lightgrey;
+    border: 1px gray;
+    border-radius: 20px;
     margin-left: 1rem;
     font-size: 1.5rem; 
     color: black;
     cursor: pointer; 
 }
 
-.modal-content > ul > li > button:hover{
-    color: red; 
+.carrito-content > ul > li > button:hover{ 
+    background: rgb(182, 182, 182);
 }
 
-.modal-content > ul {
+.carrito-content > ul {
    padding-bottom: 1rem; 
 }
 
-.modal-content > a{
+.carrito-content > a{
     padding: 12px;
     background-color: #333333;
     color: white; 
@@ -220,7 +227,7 @@ article>div div {
     text-decoration: none; 
 }
 
-.modal-content > a:hover{
+.carrito-content > a:hover{
     padding: 12px;
     background-color: #414141;
     color: white; 
@@ -231,7 +238,7 @@ article>div div {
 }
 
 
-.modal-content > p{
+.carrito-content > p{
     text-align: end;
 }
 
@@ -273,10 +280,15 @@ article>div div {
     transition-delay: 0.1s;
 }
 
+
+.card-content button:hover { 
+    background: rgb(43, 43, 43);
+     
+}
 .card:hover .card-content button { 
     opacity: 1;
 }
-
+ 
 /* Pie de página */
 
 footer {
@@ -289,7 +301,7 @@ footer {
 
 /** detalle del carrito */ 
 
-.modal {
+.carrito {
     display: none;
     position: fixed;
     z-index: 1;
@@ -302,7 +314,7 @@ footer {
     padding-top: 5rem;
 }
 
-.modal-content {
+.carrito-content {
     background-color: white;
     margin: 5% auto;
     padding: 1rem 1.5rem 0 1.5rem;
