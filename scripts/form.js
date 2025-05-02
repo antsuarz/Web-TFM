@@ -13,6 +13,7 @@ const translations = {
         "other":"Other",
         "yearExample":"Example: 1990",
         "validation":"Please check the form, you did not answer all the questions, check question number ",
+        "validation_year":"You have not entered your year of birth, or you have entered an invalid year.",
         "q1": "The information content helps in buying decisions by comparing the information about products or services.",
         "q2": "The information content provided by this website meets my needs.",
         "q3": "Contents and information support for reading and learning about buying process.",
@@ -42,6 +43,7 @@ const translations = {
         "other":"Other",
         "yearExample":"Ejemplo: 1990",
         "validation":"Por favor, verifique el formulario, no ha respondido a todas las preguntas. Revise la pregunta número ",
+        "validation_year":"No ha introducido su año de nacimiento, o ha introducido un año inválido.",
         "q1": "El contenido informativo ayuda en las decisiones de compra comparando productos o servicios.",
         "q2": "El contenido proporcionado en este sitio web satisface mis necesidades.",
         "q3": "Este sitio proveé al usuario con recursos informativos sobre el proceso de compra.",
@@ -144,6 +146,11 @@ window.onload = function () {
         yearInput.min = 1900;
         yearInput.max = new Date().getFullYear();
         yearInput.placeholder = translations[currentLang].yearExample;
+        yearInput.oninput = function () {
+            if (this.value.length > 4) {
+                this.value = this.value.slice(0, 4);
+            }
+        };
         form.appendChild(yearInput);
     }
 
@@ -173,16 +180,24 @@ window.onload = function () {
  * @returns {boolean} - true si todas las preguntas han sido respondidas, false en caso contrario.
  */
 function checkFormCompleted() {
-    for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
-        console.log("pregunta" + i);
-        const inputs = document.getElementsByName('pregunta' + i);
-        const answered = Array.from(inputs).some(input => input.checked); 
-        console.log(answered);
-        if (!answered) {
-            alert(translations[currentLang].validation + i); 
-            return false;
+    const year = document.getElementById("year").value; 
+    if (year === "" || year < 1900 || year > new Date().getFullYear()) {
+        alert(translations[currentLang].validation_year);
+        return false;
+    } 
+    else {
+        for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
+            console.log("pregunta" + i);
+            const inputs = document.getElementsByName('pregunta' + i);
+            const answered = Array.from(inputs).some(input => input.checked); 
+            console.log(answered);
+            if (!answered) {
+                alert(translations[currentLang].validation + i); 
+                return false;
+            }
         }
     }
+    
     return true;
 }
  
