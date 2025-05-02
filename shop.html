@@ -8,69 +8,70 @@
     <title id="title">AC E-commerce</title>
 </head>
 
-<div id="top">
-    <a id="atencion">Atención al cliente</a>
-    <span id="devoluciones">Devoluciones en un máximo de 30 días</span>
-    <div>
-        <a id="login">Iniciar Sesión</a>
-        <button id="lang-button">EN</button>
-    </div>
-    
-</div>
-<header>
-    <div> 
-        <img src="./img/logo.png" alt="Logo" id="logo">
-        <div id="cart" >
-            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
-                fill="#1f1f1f">
-                <path
-                    d="M284.53-80.67q-30.86 0-52.7-21.97Q210-124.62 210-155.47q0-30.86 21.98-52.7Q253.95-230 284.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83Zm400 0q-30.86 0-52.7-21.97Q610-124.62 610-155.47q0-30.86 21.98-52.7Q653.95-230 684.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83ZM238.67-734 344-515.33h285.33l120-218.67H238.67ZM206-800.67h589.38q22.98 0 34.97 20.84 11.98 20.83.32 41.83L693.33-490.67q-11 19.34-28.87 30.67-17.87 11.33-39.13 11.33H324l-52 96h487.33V-286H278q-43 0-63-31.83-20-31.84-.33-68.17l60.66-111.33-149.33-316H47.33V-880h121.34L206-800.67Zm138 285.34h285.33H344Z" />
-            </svg>
-            <span id="cart-count"></span>
-        </div>
-    </div>
-</header>
+<body>
 
-<nav>
-    <a href="#camisas" id="nav-shirts">Camisas</a>
-    <a href="#camisetas" id="nav-tshirts">Camisetas</a>
-    <a href="#chaquetas" id="nav-jackets">Chaquetas</a>
-    <a href="#pantalones" id="nav-jeans">Pantalones</a>
-    <a href="#zapatos" id="nav-shoes">Zapatos</a>
-</nav>
-<div class="separator"></div>
-<article id="zapatos" style="display: none;">
-    <h3 id="shoes-category">Zapatos</h3>
     <div>
-        <div class="card">
-            <img src="./img/shoes/black-shoes.jpg" alt="Black Shoes image">
-            <section class="card-content">
-                <h4>Black Shoes</h4>
-                <p>54 €</p>
-                <button>Add to Cart</button>
-            </section>
+        <a id="atencion">Atención al cliente</a>
+        <span id="devoluciones">Devoluciones en un máximo de 30 días</span>
+        <div>
+            <a id="login">Iniciar Sesión</a>
+            <button id="lang-button">EN</button>
         </div>
-        <div class="card">
-            <img src="./img/shoes/beige-shoes.jpg" alt="Beige Shoes image">
-            <section class="card-content">
-                <h4>Beige Shoes</h4>
-                <p>48 €</p>
-                <button>Add to Cart</button>
-            </section>
-        </div>
-        <div class="card">
-            <img src="./img/shoes/white-shoes.jpg" alt="White Shoes image">
-            <section class="card-content">
-                <h4>White Shoes</h4>
-                <p>46 €</p>
-                <button>Add to Cart</button>
-            </section>
-        </div>
-        
+
     </div>
-</article>
+    <header>
+        <div>
+            <img src="./img/logo.png" alt="Logo" id="logo">
+            <div id="cart">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                    fill="#1f1f1f">
+                    <path
+                        d="M284.53-80.67q-30.86 0-52.7-21.97Q210-124.62 210-155.47q0-30.86 21.98-52.7Q253.95-230 284.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83Zm400 0q-30.86 0-52.7-21.97Q610-124.62 610-155.47q0-30.86 21.98-52.7Q653.95-230 684.81-230t52.69 21.98q21.83 21.97 21.83 52.83t-21.97 52.69q-21.98 21.83-52.83 21.83ZM238.67-734 344-515.33h285.33l120-218.67H238.67ZM206-800.67h589.38q22.98 0 34.97 20.84 11.98 20.83.32 41.83L693.33-490.67q-11 19.34-28.87 30.67-17.87 11.33-39.13 11.33H324l-52 96h487.33V-286H278q-43 0-63-31.83-20-31.84-.33-68.17l60.66-111.33-149.33-316H47.33V-880h121.34L206-800.67Zm138 285.34h285.33H344Z" />
+                </svg>
+                <span id="cart-count"></span>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <a href="#camisas" id="nav-shirts">Camisas</a>
+        <a href="#camisetas" id="nav-tshirts">Camisetas</a>
+        <a href="#chaquetas" id="nav-jackets">Chaquetas</a>
+        <a href="#pantalones" id="nav-jeans">Pantalones</a>
+        <a href="#zapatos" id="nav-shoes">Zapatos</a>
+    </nav>
+    <div class="separator"></div>
+    <article id="zapatos" style="display: none;">
+        <h2 id="shoes-category">Zapatos</h2>
+        <div>
+            <div class="card">
+                <img src="./img/shoes/black-shoes.jpg" alt="Black Shoes image">
+                <section class="card-content">
+                    <h4>Black Shoes</h4>
+                    <p>54 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+            <div class="card">
+                <img src="./img/shoes/beige-shoes.jpg" alt="Beige Shoes image">
+                <section class="card-content">
+                    <h4>Beige Shoes</h4>
+                    <p>48 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+            <div class="card">
+                <img src="./img/shoes/white-shoes.jpg" alt="White Shoes image">
+                <section class="card-content">
+                    <h4>White Shoes</h4>
+                    <p>46 €</p>
+                    <button>Add to Cart</button>
+                </section>
+            </div>
+
+        </div>
+    </article>
     <article id="camisas">
-        <h3 id="shirt-category">Camisas</h3>
+        <h2 id="shirt-category">Camisas</h2>  
         <div>
             <div class="card">
                 <img src="./img/shirt/white-shirt.jpg" alt="White shirt image">
@@ -123,7 +124,7 @@
         </div>
     </article>
     <article id="chaquetas">
-        <h3 id="jacket-category">Chaquetas</h3>
+        <h2 id="jacket-category">Chaquetas</h2>
         <div>
             <div class="card">
                 <img src="./img/jacket/black-jacket.jpg" alt="Black Jacket image">
@@ -160,7 +161,7 @@
         </div>
     </article>
     <article id="camisetas">
-        <h3 id="tshirt-category">Camisetas</h3>
+        <h2 id="tshirt-category">Camisetas</h2>
         <div>
             <div class="card">
                 <img src="./img/tshirt/white-purple-tshirt.jpg" alt="White and Purple T-shirt image">
@@ -285,11 +286,11 @@
                     <button>Add to Cart</button>
                 </section>
             </div>
-            
+
         </div>
     </article>
     <article id="pantalones">
-        <h3 id="jeans-category">Pantalones</h3>
+        <h2 id="jeans-category">Pantalones</h2>
         <div>
             <div class="card">
                 <img src="./img/jeans/blue-jean.jpg" alt="Blue Jean image">
@@ -347,9 +348,9 @@
                 <h2 id="modal-title">Carrito</h2>
                 <ul id="cart-items-list"></ul>
                 <a id="download-video" href="questionary.html" onclick="stopRecordingAndDownload()">Comprar</a>
-                <p>Total: <span id="total-price">0 €</span></p> 
+                <p>Total: <span id="total-price">0 €</span></p>
             </div>
-        </div>   
+        </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 if (typeof startRecording === "function") {
@@ -358,30 +359,32 @@
                     console.error("Error a la hora de iniciar la grabación.");
                 }
             });
-        </script> 
+        </script>
         <script src="./scripts/i18n.js"></script>
         <script src="./scripts/record.js"></script>
         <script src="./scripts/manageCart.js"></script>
         <script src="./scripts/shop.js"></script>
-    </article> 
-<footer>
-    <div id="footer-content">
-        <img src="./img/logo.png" alt="Logo AC E-commerce">
-        <div id="footer-links">
-            <a id="politica" href="#">Política de privacidad</a>
-            <a id="terminos" href="#">Términos y condiciones</a>
-            <a id="contacto" href="#">Contacto</a>
-            <a id="about" href="#">Sobre nosotros</a>
-            <a href="#">FAQ</a> 
-            <a id="tienda" href="#">Tienda</a> 
-            <a id="social" href="#">Redes sociales</a>
-            <a href="#">Blog</a> 
-            <a id="afiliados" href="#">Programa de Afiliados</a>
-            <a id="recompensas" href="#">Programa de recompensas</a>
-            <a id="promociones" href="#">Promociones</a>
-            <a id="envios" href="#">Envíos y Devoluciones</a>
+    </article>
+    <footer>
+        <div id="footer-content">
+            <img src="./img/logo.png" alt="Logo AC E-commerce">
+            <div id="footer-links">
+                <a id="politica" href="#">Política de privacidad</a>
+                <a id="terminos" href="#">Términos y condiciones</a>
+                <a id="contacto" href="#">Contacto</a>
+                <a id="about" href="#">Sobre nosotros</a>
+                <a href="#">FAQ</a>
+                <a id="tienda" href="#">Tienda</a>
+                <a id="social" href="#">Redes sociales</a>
+                <a href="#">Blog</a>
+                <a id="afiliados" href="#">Programa de Afiliados</a>
+                <a id="recompensas" href="#">Programa de recompensas</a>
+                <a id="promociones" href="#">Promociones</a>
+                <a id="envios" href="#">Envíos y Devoluciones</a>
+            </div>
         </div>
-    </div>
-    <p>&copy; 2025 AC E-commerce. Master Universitario en Ingeniería Web.</p>
-</footer>
+        <p>&copy; 2025 AC E-commerce. Master Universitario en Ingeniería Web.</p>
+    </footer>
+</body>
+
 </html>
