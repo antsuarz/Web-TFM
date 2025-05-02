@@ -4,16 +4,16 @@ const MainLanguageManager = (() => {
     const translations = {
         en: { 
             "start": "Start",
-            "i1": "1. Select the cheapest t-shirt.",
-            "i2": "2. Select the most expensive shoes.",
-            "i3": "3. Remove the t-shirt from the cart and complete the purchase."
+            "i1": "Select the cheapest t-shirt.",
+            "i2": "Select the most expensive shoes.",
+            "i3": "Remove the t-shirt from the cart and complete the purchase."
             
         },
         es: { 
            "start": "Entendido",
-            "i1": "1. Selecciona la camiseta de menor precio.",
-            "i2": "2. Selecciona los zapatos de mayor precio.",
-            "i3": "3. Elimina la camiseta del carrito y finalizar la compra."
+            "i1": "Selecciona la camiseta de menor precio.",
+            "i2": "Selecciona los zapatos de mayor precio.",
+            "i3": "Elimina la camiseta del carrito y finalizar la compra."
     
         }
     };
@@ -23,7 +23,7 @@ const MainLanguageManager = (() => {
 
         paragraphs.forEach((p, index) => {
             const key = "i" + (index + 1);
-            p.textContent = translations[currentLang][key]; 
+            p.textContent = (index+1) +". "+ translations[currentLang][key]; 
         });
         document.getElementById("main-button").textContent = translations[currentLang]["start"];
         document.getElementById("lang-button").textContent = currentLang === "en" ? "ES" : "EN"; 

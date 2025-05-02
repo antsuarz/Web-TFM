@@ -21,8 +21,7 @@ function startRecording() {
 function stopRecordingAndDownload() { 
 
     if (mediaRecorder && mediaRecorder.state !== "inactive") {
-        mediaRecorder.stop();
-        console.log("Grabacion parada");
+        mediaRecorder.stop(); 
         isDownloading = true;
 
         mediaRecorder.onstop = () => {
@@ -50,5 +49,9 @@ window.addEventListener("beforeunload", function (event) {
     if (isDownloading) {
         event.preventDefault();
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    startRecording();
 });
 
