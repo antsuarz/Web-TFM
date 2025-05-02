@@ -1,4 +1,4 @@
-const NUMBER_OF_QUESTIONS=26;
+const NUMBER_OF_QUESTIONS=19;
 
 let currentLang = "es";
 const translations = {
