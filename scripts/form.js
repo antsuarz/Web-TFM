@@ -62,7 +62,6 @@ const translations = {
         "q18": "Recomendaría este sitio web a un amigo."
     }
 }
-
 window.onload = function () {
 
     const form = document.querySelector('form'); 
@@ -84,8 +83,8 @@ window.onload = function () {
     function createQuestions() {
         for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
             const label = document.createElement('label');
-            label.setAttribute('for', 'pregunta' + (i + 1));
-            label.setAttribute('id', 'q' + (i + 1));
+            label.setAttribute('for', 'pregunta' + i);
+            label.setAttribute('id', 'q' + i);
             label.textContent = i+") "+ translations[currentLang]["q" + i];
             form.appendChild(label);
 
@@ -93,7 +92,7 @@ window.onload = function () {
             for (let j = 0; j <= NUMBER_OF_RADIOS; j++) {
                 const input = document.createElement('input');
                 input.type = 'radio';
-                input.name = 'pregunta' + (i + 1);
+                input.name = 'pregunta' + i;
                 input.value = j;
                 div.appendChild(input);
                 div.appendChild(document.createTextNode(j));
@@ -158,11 +157,8 @@ window.onload = function () {
         button.id = 'submit-button';
         button.textContent = translations[currentLang].submit;
         button.onclick = function () {
-            var checked = checkFormCompleted();
-            if (checked == -1) {
+            if (checkFormCompleted()) {
                 downloadCSV();
-            } else {
-                alert(translations[currentLang].validation + checked);
             }
         };
         form.appendChild(button);
@@ -173,26 +169,23 @@ window.onload = function () {
 /**
  * Función para comprobar si el formulario está completo.
  * Recorre todas las preguntas y verifica si se ha respondido a cada una de ellas.
- * @returns {number} -1 si todas las preguntas están respondidas, o el número de la primera pregunta no respondida.
- * Si no se ha respondido a ninguna pregunta, devuelve 1.
+ * Si alguna pregunta no ha sido respondida, muestra una alerta.
+ * @returns {boolean} - true si todas las preguntas han sido respondidas, false en caso contrario.
  */
 function checkFormCompleted() {
     for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
+        console.log("pregunta" + i);
         const inputs = document.getElementsByName('pregunta' + i);
-        let checked = false;
-        for (let input of inputs) {
-            if (input.checked) {
-                checked = true;
-                break;
-            }
-        }
-        if (!checked) {
-            return i; 
+        const answered = Array.from(inputs).some(input => input.checked); 
+        console.log(answered);
+        if (!answered) {
+            alert(translations[currentLang].validation + i); 
+            return false;
         }
     }
-    return -1; 
+    return true;
 }
-
+ 
 /**
  * Función para descargar el formulario en formato CSV.
  */
@@ -231,7 +224,7 @@ function downloadCSV() {
 
 const FormLanguageManager = (() => { 
 
-    /**
+     /**
      * Función para actualizar el idioma del formulario.
      * Cambia el texto de las preguntas y los botones según el idioma seleccionado.
      */
