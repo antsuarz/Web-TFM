@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
             removeButton.style.backgroundSize = 'contain';
             removeButton.style.backgroundRepeat = 'no-repeat';
             removeButton.style.backgroundPosition = 'center';
-            removeButton.style.width = '20px'; // Ancho del botón
-            removeButton.style.height = '20px'; // Alto del botón
-            removeButton.style.border = 'none'; // Elimina el borde
-            removeButton.style.cursor = 'pointer'; // Cambia el cursor al pasar sobre el botón
+            removeButton.style.width = '20px'; 
+            removeButton.style.height = '20px'; 
+            removeButton.style.border = 'none'; 
+            removeButton.style.cursor = 'pointer'; 
             removeButton.addEventListener('click', () => removeItem(index));
 
             listItem.appendChild(removeButton);

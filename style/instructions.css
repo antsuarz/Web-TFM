@@ -5,8 +5,21 @@ body {
     padding: 0;  
 }
 
+h1 {
+    margin: 0;
+    grid-column: 2;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 50%;
+}
+
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     background-color: #333;
@@ -14,48 +27,19 @@ header {
     padding: 10px 20px; 
 }
 
-
-h1 {
-    margin: 0;
-    flex-grow: 1;
-    text-align: center;
-}
-
-header > div > button {
-    background-color: gray;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-header > div > button:hover {
-    background-color: #adadad;
-    color: black;
+header > div { 
+    display: flex; 
+    justify-content: end;  
 }
 
 main > div{
+  margin-top: 5rem;
   display: flex; 
   flex-direction: column; 
   align-items: center;
 }
 
-iframe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 98vh;
-    border: none; 
-}
-
-iframe::-webkit-scrollbar {
-    display: none;
-}
-
+/* Boton de Entendido */
 
 main > div > a { 
     padding: 12px;
@@ -65,7 +49,7 @@ main > div > a {
     border-radius: 5px;
     font-size: 1.1rem;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 5rem;
     max-width: 50%;
     text-decoration: none;
 }
@@ -74,8 +58,20 @@ main > div > a:hover {
     background-color: #505050;
 }
 
-p{
+/* boton de lenguaje */
+
+header > div > button {
+    grid-column: 3;
+    background-color: gray;
+    color: white;
+    padding: 8px 16px;
     text-align: center;
-    font-size: 1.2rem;
-    max-width: 50%;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+header > div > button:hover {
+    background-color: #adadad;
+    color: black;
 }
