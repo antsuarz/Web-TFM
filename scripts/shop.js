@@ -31,6 +31,7 @@ const LanguageManager = (() => {
             "envios":"Shipping and Returns",
             "devoluciones":"Returns within 30 days",
             "notification":"Product added to cart",
+            "buy-message":"Buy Now",
         },
         es: {
             title: "AC Comercio Electrónico",
@@ -60,7 +61,8 @@ const LanguageManager = (() => {
             "afiliados":"Programa de Afiliados",
             "envios":"Envíos y devoluciones",
             "devoluciones":"Devoluciones en un máximo de 30 días",
-            "notification":"Producto añadido al carrito"
+            "notification":"Producto añadido al carrito",
+            "buy-message":"Comprar"
         }
     };
  
@@ -88,8 +90,8 @@ const LanguageManager = (() => {
         document.getElementById("jacket-category").textContent = translations[currentLang]["jacket-category"];
         document.getElementById("jeans-category").textContent = translations[currentLang]["jeans-category"]; 
         document.getElementById("shoes-category").textContent = translations[currentLang]["shoes-category"]; 
-        document.getElementById("modal-title").textContent = translations[currentLang]["modal-title"]; 
-        
+        document.getElementById("modal-title").textContent = translations[currentLang]["modal-title"];
+        document.getElementById("download-video").textContent = translations[currentLang]["buy-message"]; 
     }
 
     function navUpdate() {
