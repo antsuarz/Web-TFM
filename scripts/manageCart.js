@@ -41,8 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         total += productPrice;
         updateCart();
+
+        showNotification();
     }
 
+    function showNotification() {
+        
+        const notificationContainer = document.getElementById('notification-container');
+        notificationContainer.classList.add('show');
+     
+        setTimeout(() => {
+            notificationContainer.classList.remove('show');
+        }, 1500);
+    }
     /**
      * Función que elimina un producto del carrito de la compra.
      * @param {*} index, índice del producto que se quiere eliminar del carrito.

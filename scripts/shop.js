@@ -30,6 +30,7 @@ const LanguageManager = (() => {
             "afiliados":"Affiliate Program",
             "envios":"Shipping and Returns",
             "devoluciones":"Returns within 30 days",
+            "notification":"Product added to cart",
         },
         es: {
             title: "AC Comercio Electrónico",
@@ -59,6 +60,7 @@ const LanguageManager = (() => {
             "afiliados":"Programa de Afiliados",
             "envios":"Envíos y devoluciones",
             "devoluciones":"Devoluciones en un máximo de 30 días",
+            "notification":"Producto añadido al carrito"
         }
     };
  
@@ -67,6 +69,7 @@ const LanguageManager = (() => {
         categoryUpdate();
         buttonsUpdate();
         footerUpdate();
+        document.getElementById("notification-message").textContent = translations[currentLang]["notification"];
         document.getElementById("lang-button").textContent = currentLang === "en" ? "ES" : "EN"; 
         
     }

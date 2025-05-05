@@ -70,24 +70,24 @@ header div#cart {
     justify-content: center;
     width: 50px; 
     height: 50px; 
-    background-color: rgb(218, 216, 216); 
+    background-color: rgb(243, 76, 91);
     border-radius: 50%; 
     cursor: pointer; 
 }
 
 header div#cart:hover{
-    background-color: rgb(201, 201, 201); 
+    background-color: rgb(238, 123, 133);
 }
 
 header div#cart svg {
     width: 30px;
-    fill: #1f1f1f; 
+    fill: black; 
 }
 
 header div#cart span#cart-count { 
     font-size: 0.9rem;
     font-weight: bold;
-    color: #1f1f1f;
+    color: black;
 }
 
 .separator {
@@ -369,4 +369,32 @@ footer a:hover {
 #lang-button:hover {
     background-color: #616161;
     color: white;
+}
+
+/** Notificaciones */
+
+#notification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; 
+    border: 1px solid #888;
+    border-radius: 5px; 
+    padding: 0 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#notification-container p {
+    margin-left: 1rem; 
+}
+#notification-container.show {
+    opacity: 1;
+    visibility: visible;
 }
