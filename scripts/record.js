@@ -1,8 +1,15 @@
 let mediaRecorder;
 let recordedChunks = [];
 let isDownloading = false;
+let recordingId = ""; 
+
+function generateRecordingId() {
+    return `${Math.random().toString(36).substr(2, 9).toUpperCase()}`; 
+}
 
 function startRecording() {
+    recordingId = generateRecordingId();
+    sessionStorage.setItem("recordingId", recordingId);
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then(stream => {
             mediaRecorder = new MediaRecorder(stream);
@@ -28,11 +35,9 @@ function stopRecordingAndDownload() {
  
             const url = URL.createObjectURL(new Blob(recordedChunks, { type: "video/webm" }));
             const a = document.createElement("a");
-            
-            const timestamp = new Date().toISOString().replace(/[:.]/g, "-"); 
 
             a.href = url;
-            a.download = `video_${timestamp}.webm`;
+            a.download = `${recordingId}.webm`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

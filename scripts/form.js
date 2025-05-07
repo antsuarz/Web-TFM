@@ -186,11 +186,9 @@ function checkFormCompleted() {
         return false;
     } 
     else {
-        for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) {
-            console.log("pregunta" + i);
+        for (let i = 1; i <= NUMBER_OF_QUESTIONS; i++) { 
             const inputs = document.getElementsByName('pregunta' + i);
-            const answered = Array.from(inputs).some(input => input.checked); 
-            console.log(answered);
+            const answered = Array.from(inputs).some(input => input.checked);
             if (!answered) {
                 alert(translations[currentLang].validation + i); 
                 return false;
@@ -205,6 +203,7 @@ function checkFormCompleted() {
  * Función para descargar el formulario en formato CSV.
  */
 function downloadCSV() {
+    const recordingId = sessionStorage.getItem("recordingId"); 
     const formData = [];
     const year = document.getElementById("year").value;
     formData.push(`birth,${year}`);
@@ -231,7 +230,7 @@ function downloadCSV() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-"); 
     const a = document.createElement("a");
     a.href = encodeURI(csvContent);
-    a.download = `respuestas_formulario_${timestamp}.csv`;
+    a.download = `${recordingId}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

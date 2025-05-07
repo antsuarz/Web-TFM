@@ -266,6 +266,7 @@ article > div div {
     background: rgb(43, 43, 43);
      
 }
+
 .card:hover .card-content button { 
     opacity: 1;
 }
