@@ -2,8 +2,7 @@ const LanguageManager = (() => {
     let currentLang = "es";
 
     const translations = {
-        en: {
-            title: "AC E-commerce",
+        en: { 
             "login":"Login",
             "atencion":"Customer Service",
             "nav-shirts": "Shirts",
@@ -33,8 +32,7 @@ const LanguageManager = (() => {
             "notification":"Product added to cart",
             "buy-message":"Buy Now",
         },
-        es: {
-            title: "AC Comercio Electrónico",
+        es: { 
             "login":"Iniciar Sesión",
             "atencion":"Atención al Cliente",
             "nav-shirts": "Camisas",
@@ -94,8 +92,7 @@ const LanguageManager = (() => {
         document.getElementById("download-video").textContent = translations[currentLang]["buy-message"]; 
     }
 
-    function navUpdate() {
-        document.getElementById("title").textContent = translations[currentLang].title;
+    function navUpdate() { 
         document.getElementById("nav-shirts").textContent = translations[currentLang]["nav-shirts"];
         document.getElementById("nav-tshirts").textContent = translations[currentLang]["nav-tshirts"];
         document.getElementById("nav-jeans").textContent = translations[currentLang]["nav-jeans"];
